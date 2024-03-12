@@ -33,6 +33,7 @@ pipeline{
                         sh "docker build -t karunsureshraj/petclinic_jenkins_repo:${dockerTag} ."
                         sh "docker tag karunsureshraj/petclinic_jenkins_repo:${dockerTag} karunsureshraj/petclinic_jenkins_repo:latest"
                         sh "docker push karunsureshraj/petclinic_jenkins_repo:${dockerTag}"
+                        sh "docker push karunsureshraj/petclinic_jenkins_repo:latest"
                     }
                 }
             }
