@@ -129,7 +129,7 @@ In this step, we will run the Spring PetClinic application using Docker. Follow 
    - This will start the PetClinic application and its associated services in Docker containers.
 
 4. View the PetClinic Application in Your Browser:
-   - Open a web browser.
+   - Open your web browser
    - Visit the PetClinic application at http://localhost:8080
 
 
