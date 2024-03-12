@@ -120,25 +120,15 @@ In this step, we will run the Spring PetClinic application using Docker. Follow 
 
 1. *Pre-requisite: You Must Have Docker Host Installed in Your System*
 
-2. Open your terminal or command prompt.
+2. Create docker-compose.yml file in your local machine and copy the contents from https://github.com/karunsuresh123/spring-petclinic-jenkins/blob/main/docker-compose.yml to docker-compose.yml
 
-3. Clone the forked 'spring-petclinic-jenkins' repository into your local machine:
+3. Run 'docker compose up' from the location where you have `docker-compose.yml` file:
      ```
-     git clone https://github.com/karunsuresh123/spring-petclinic-jenkins.git
-     ```
-
-4. Navigate to the spring-petclinic-jenkins Directory:
-     ```
-     cd spring-petclinic-jenkins
-     ```
-
-5. Run 'docker compose up':
-     ```
-     docker compose up
+     docker compose up --build -d
      ```
    - This will start the PetClinic application and its associated services in Docker containers.
 
-6. View the PetClinic Application in Your Browser:
+4. View the PetClinic Application in Your Browser:
    - Open a web browser.
    - Visit the PetClinic application at http://localhost:8080
 
