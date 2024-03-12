@@ -31,6 +31,7 @@ pipeline{
                     def dockerTag = "${env.BUILD_NUMBER}" // Get the current build number
                     withDockerRegistry(credentialsId: 'docker') {
                         sh "docker build -t karunsureshraj/petclinic_jenkins_repo:${dockerTag} ."
+                        sh "docker tag karunsureshraj/petclinic_jenkins_repo:${dockerTag} karunsureshraj/petclinic_jenkins_repo:latest"
                         sh "docker push karunsureshraj/petclinic_jenkins_repo:${dockerTag}"
                     }
                 }

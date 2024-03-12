@@ -106,12 +106,12 @@ In this step, we will create a Docker container image for the Spring PetClinic A
    - This will create the necessary files for setting up the Docker container image:
      - `.dockerignore`
      - `Dockerfile`
-     - `docker-compose.yaml`
+     - `docker-compose.yml`
      - `README.Docker.md`
 3. Update Dockerfile for Multi-Stage Build:
    - Edit the `Dockerfile` to set up a multi-stage build that runs the Spring PetClinic app on port 8080
-4. Update docker-compose.yaml:
-   - Edit the `docker-compose.yaml` file to run the PetClinic service connected to a MySQL database service
+4. Update docker-compose.yml:
+   - Edit the `docker-compose.yml` file to run the PetClinic service connected to a MySQL database service
 
 
 ### Step 8 - Run the PetClinic Application
