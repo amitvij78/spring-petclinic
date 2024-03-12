@@ -29,11 +29,12 @@ pipeline{
             steps {
                 script {
                     def dockerTag = "${env.BUILD_NUMBER}" // Get the current build number
+                    def dockerImage = "karunsureshraj/petclinic_jenkins_repo"
                     withDockerRegistry(credentialsId: 'docker') {
-                        sh "docker build -t karunsureshraj/petclinic_jenkins_repo:${dockerTag} ."
-                        sh "docker tag karunsureshraj/petclinic_jenkins_repo:${dockerTag} karunsureshraj/petclinic_jenkins_repo:latest"
-                        sh "docker push karunsureshraj/petclinic_jenkins_repo:${dockerTag}"
-                        sh "docker push karunsureshraj/petclinic_jenkins_repo:latest"
+                        sh "docker build -t ${dockerImage}:${dockerTag} ."
+                        sh "docker tag ${dockerImage}:${dockerTag} ${dockerImage}:latest"
+                        sh "docker push ${dockerImage}:${dockerTag}"
+                        sh "docker push ${dockerImage}:latest"
                     }
                 }
             }
