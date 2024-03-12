@@ -10,7 +10,7 @@ pipeline{
                 cleanWs()
             }
         }
-        stage ('checkout scm') {
+        stage ('checkout code') {
             steps {
                 git branch: 'main', credentialsId: 'github_token', poll: false, url: 'https://github.com/karunsuresh123/spring-petclinic-jenkins.git'
             }
@@ -23,11 +23,6 @@ pipeline{
         stage ('maven Test') {
             steps {
                 sh 'mvn test -Dmaven.test.skip=true'
-            }
-        }
-        stage ('Build war file'){
-            steps{
-                sh 'mvn clean install -DskipTests=true'
             }
         }
         stage('Docker build') {
