@@ -20,7 +20,7 @@ Here are the high-level steps:
 &ensp;&ensp;***Step 6*** --- Create a Jenkinsfile with pipeline stages  
 &ensp;&ensp;***Step 7*** --- Setup a Runnable Docker Container Image for PetClinic Application
 &ensp;&ensp;***Step 8*** --- Run the PetClinic Application  
-
+ 
 
 ### Step 1 - Create an Ubuntu EC2 Instance with Jenkins Installed
 - Launch an EC2 instance with an Ubuntu image
