@@ -30,7 +30,7 @@ pipeline{
                 script {
                     def dockerTag = "${env.BUILD_NUMBER}" // Get the current build number
                     def dockerImage = "av78/petclinic_jenkins_repo"
-                    withDockerRegistry(credentialsId: 'jenkins-docker') {
+                    withDockerRegistry(credentialsId: 'jenkins-to-docker') {
                         bat "docker build -t ${dockerImage}:${dockerTag} ."
                         bat "docker tag ${dockerImage}:${dockerTag} ${dockerImage}:latest"
                         bat "docker push ${dockerImage}:${dockerTag}"
