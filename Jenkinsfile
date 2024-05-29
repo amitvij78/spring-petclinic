@@ -17,12 +17,12 @@ pipeline{
         }
         stage ('maven compile') {
             steps {
-                'mvn clean compile'
+                sh 'mvn clean compile'
             }
         }
         stage ('maven Test') {
             steps {
-                'mvn test -Dmaven.test.skip=true'
+                sh 'mvn test -Dmaven.test.skip=true'
             }
         }
    }
