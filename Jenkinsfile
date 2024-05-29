@@ -25,5 +25,19 @@ pipeline{
                 bat 'mvn test -Dmaven.test.skip=true'
             }
         }
+        stage('Docker build') {
+            steps {
+                script {
+                    def dockerTag = "${env.BUILD_NUMBER}" // Get the current build number
+                    def dockerImage = "av78/petclinic_jenkins_repo"
+                    withDockerRegistry(credentialsId: 'avdockercreds') {
+                        bat "docker build -t ${dockerImage}:${dockerTag} ."
+                        bat "docker tag ${dockerImage}:${dockerTag} ${dockerImage}:latest"
+                        bat "docker push ${dockerImage}:${dockerTag}"
+                        bat "docker push ${dockerImage}:latest"
+                    }
+                }
+            }
+        }
    }
 }
